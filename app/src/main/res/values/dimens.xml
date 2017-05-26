@@ -2,4 +2,5 @@
 <resources>
     <dimen name="login_img">190dp</dimen>
     <dimen name="small">10dp</dimen>
+    <dimen name="medium">20dp</dimen>
 </resources>
