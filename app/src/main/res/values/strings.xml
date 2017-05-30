@@ -7,4 +7,14 @@
     <string name="registrate">Registrate</string>
     <string name="entrar">Entrar</string>
     <string name="usuario">Usuario</string>
+
+    <string name="nav_home">Inicio</string>
+    <string name="nav_action">Accion</string>
+    <string name="nav_horrot">Terror</string>
+    <string name="nav_comedy">Comedia</string>
+    <string name="nav_fantasy">Fantasia</string>
+    <string name="nav_drama">Drama</string>
+    <string name="nav_profile">Perfil</string>
+    <string name="nav_logout">Cerrar Sesion</string>
+    <string name="synopsis">Sinopsis</string>
 </resources>
