@@ -1,79 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:stretchColumns="*"
-    tools:context="unicauca.movil.peliculas.LoginActivity">
+    >
 
-    <FrameLayout
-        android:layout_height="@dimen/login_img"
-        >
-        <ImageView
-            android:layout_height="@dimen/login_img"
-            android:layout_width="match_parent"
-            android:src="@drawable/login_bg"
-            android:scaleType="centerCrop" />
-        <TextView
-            style="@style/TextAppearance.AppCompat.Headline"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/estrenos"
-            android:layout_gravity="bottom"
-            android:textColor="#fff"
-            android:padding="@dimen/small"
-            />
-    </FrameLayout>
+    <data>
+        <variable
+            name="handler"
+            type="unicauca.movil.peliculas.LoginActivity"/>
+    </data>
 
-    <LinearLayout
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="@dimen/small"
-        >
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="*"
+        tools:context="unicauca.movil.peliculas.LoginActivity">
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/username"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/medium">
+        <FrameLayout android:layout_height="@dimen/login_img">
 
-            <android.support.design.widget.TextInputEditText
+            <ImageView
+                android:layout_height="@dimen/login_img"
+                android:layout_width="match_parent"
+                android:src="@drawable/login_bg"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Headline"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:hint="@string/usuario"
-                />
+                android:text="@string/estrenos"
+                android:layout_gravity="bottom"
+                android:textColor="#fff"
+                android:padding="@dimen/small" />
+        </FrameLayout>
 
-        </android.support.design.widget.TextInputLayout>
+        <LinearLayout
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/small">
 
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <android.support.design.widget.TextInputEditText
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:hint="Password"
+                android:layout_marginBottom="@dimen/medium">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="@string/usuario" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:hint="Password" />
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+        <TableRow>
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:text="@string/registrate" />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:text="@string/entrar"
+                android:onClick="@{()-> handler.goToMain()}"
                 />
-        </android.support.design.widget.TextInputLayout>
-
-    </LinearLayout>
-    <TableRow>
-        <Button
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:text="@string/registrate"
-            />
-        <Button
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:text="@string/entrar"
-            />
-    </TableRow>
+        </TableRow>
 
 
-</TableLayout>
+    </TableLayout>
+</layout>
+

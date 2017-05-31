@@ -47,6 +47,11 @@ public class Data {
             p5.setImagen("http://sm.ign.com/ign_latam/screenshot/default/spidermanhomecomingposter_u8zq.jpg");
             p5.setSinopsis("Después de los acontecimientos de Capitán América: Civil War, Peter Parker, con la ayuda de su mentor Tony Stark, trata de equilibrar su vida como un estudiante de secundaria ordinaria en Queens, Nueva York con su lucha contra el crimen como su superhéroe alter ego Spider-Man mientras una nueva amenaza, el Buitre, aparece.");
 
+            peliculas.add(p1);
+            peliculas.add(p2);
+            peliculas.add(p3);
+            peliculas.add(p4);
+            peliculas.add(p5);
         }
         return  peliculas;
     }
