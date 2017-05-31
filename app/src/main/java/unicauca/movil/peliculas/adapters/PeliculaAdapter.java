@@ -14,12 +14,18 @@ import unicauca.movil.peliculas.models.Pelicula;
 
 public class PeliculaAdapter extends  RecyclerView.Adapter<PeliculaAdapter.PeliculaHolder>{
 
+    public interface OnPeliculaListener{
+        void onPeliculaClick(int position);
+    }
+
     LayoutInflater inflater;
     List<Pelicula> data;
+    OnPeliculaListener listener;
 
-    public PeliculaAdapter(LayoutInflater inflater, List<Pelicula> data) {
+    public PeliculaAdapter(LayoutInflater inflater, List<Pelicula> data, OnPeliculaListener listener) {
         this.inflater = inflater;
         this.data = data;
+        this.listener = listener;
     }
 
     @Override
@@ -31,11 +37,17 @@ public class PeliculaAdapter extends  RecyclerView.Adapter<PeliculaAdapter.Pelic
     @Override
     public void onBindViewHolder(PeliculaHolder holder, int position) {
         holder.binding.setMovie(data.get(position));
+        holder.binding.card.setTag(position);
+        holder.binding.setHandler(this);
     }
 
     @Override
     public int getItemCount() {
         return data.size();
+    }
+
+    public void onItemClick(int position){
+        listener.onPeliculaClick(position);
     }
 
     //region ViewHolders
