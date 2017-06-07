@@ -43,6 +43,7 @@ public class MainFragment extends Fragment implements PeliculaAdapter.OnPelicula
     @Override
     public void onPeliculaClick(int position) {
         Intent intent = new Intent(getActivity(), DetailActivity.class);
+        intent.putExtra("pos", position);
         startActivity(intent);
     }
 }

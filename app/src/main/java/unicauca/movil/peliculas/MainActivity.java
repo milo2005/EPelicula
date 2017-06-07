@@ -1,6 +1,7 @@
 package unicauca.movil.peliculas;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
@@ -17,6 +18,7 @@ import android.view.View;
 
 import unicauca.movil.peliculas.databinding.ActivityMainBinding;
 import unicauca.movil.peliculas.fragments.MainFragment;
+import unicauca.movil.peliculas.util.Preference;
 
 public class MainActivity extends AppCompatActivity implements DrawerLayout.DrawerListener, NavigationView.OnNavigationItemSelectedListener {
 
@@ -120,6 +122,11 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
                 putFragment(R.id.container, MainFragment.instance());
                 break;
             case R.id.nav_logout:
+                SharedPreferences preferences =  getSharedPreferences(Preference.PREFERENCE_NAME, MODE_PRIVATE);
+                SharedPreferences.Editor editor =  preferences.edit();
+                editor.putBoolean(Preference.KEY_LOGGED, false);
+                editor.apply();
+
                 Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
                 finish();
